@@ -8,7 +8,7 @@ FROM
 		@curRank :=
 	IF
 		( @preVal = quantity, @curRank := @curRank + 0, @curRank := @curRank + 1 ) AS Rank,
-		@preVal = quantity
+		@preVal := quantity
 		
 	FROM
 		orderitems,
