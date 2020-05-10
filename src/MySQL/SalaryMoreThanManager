@@ -1,0 +1,6 @@
+# Write your MySQL query statement below
+select Name as Employee
+from Employee e, (select distinct e1.Salary, e1.Id
+from Employee e1, Employee e2
+where e1.Id = e2.ManagerId) r
+where e.ManagerId = r.Id and e.Salary > r.Salary;
